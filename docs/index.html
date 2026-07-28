@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mobile POC/POT Setup Tool</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg-soft:#f5f5f8; --card:#ffffff; --border:#e6e6ee;
+    --text:#1a1a29; --muted:#5b5b6e; --accent:#6c47ff; --accent-ink:#ffffff;
+    --code-bg:#f2f1fb; --shadow:0 1px 2px rgba(20,20,50,.06),0 8px 24px rgba(20,20,50,.06);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0e0e16; --bg-soft:#14141f; --card:#16161f; --border:#26263a;
+      --text:#ececf3; --muted:#a0a0b4; --accent:#8b6bff; --accent-ink:#0e0e16;
+      --code-bg:#1c1c2b; --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:820px;margin:0 auto;padding:0 22px}
+  code{background:var(--code-bg);border-radius:6px;padding:.12em .4em;font-size:.9em;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  pre{background:var(--code-bg);border:1px solid var(--border);border-radius:12px;
+    padding:16px 18px;overflow-x:auto;margin:14px 0}
+  pre code{background:none;padding:0;font-size:.88em;line-height:1.55}
+
+  /* Hero */
+  header.hero{background:linear-gradient(180deg,var(--bg-soft),var(--bg));
+    border-bottom:1px solid var(--border);padding:64px 0 52px;text-align:center}
+  .eyebrow{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent);background:var(--code-bg);
+    padding:5px 12px;border-radius:999px;margin-bottom:18px}
+  h1{font-size:clamp(1.9rem,5vw,2.9rem);line-height:1.1;margin:.1em 0 .35em;letter-spacing:-.02em}
+  .lede{font-size:1.16rem;color:var(--muted);max-width:600px;margin:0 auto 30px}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--accent);
+    color:var(--accent-ink);font-weight:600;font-size:1.05rem;padding:14px 26px;
+    border-radius:12px;box-shadow:var(--shadow)}
+  .cta:hover{text-decoration:none;filter:brightness(1.06)}
+  .cta small{font-weight:500;opacity:.85}
+  .sub{display:block;margin-top:12px;font-size:.9rem;color:var(--muted)}
+
+  section{padding:44px 0;border-bottom:1px solid var(--border)}
+  section:last-of-type{border-bottom:none}
+  h2{font-size:1.5rem;letter-spacing:-.01em;margin:0 0 6px}
+  h2 .num{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.4em}
+  .step-lead{color:var(--muted);margin:0 0 18px}
+  ul.clean{list-style:none;padding:0;margin:16px 0}
+  ul.clean li{position:relative;padding-left:28px;margin:9px 0}
+  ul.clean li::before{content:"";position:absolute;left:6px;top:.62em;width:7px;height:7px;
+    border-radius:50%;background:var(--accent)}
+
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;
+    padding:20px 22px;box-shadow:var(--shadow);margin:18px 0}
+  .placeholder{border:2px dashed var(--border);border-radius:14px;background:var(--bg-soft);
+    padding:34px 20px;text-align:center;color:var(--muted);margin:18px 0}
+  .placeholder .big{font-size:1.6rem;margin-bottom:6px}
+  .note{background:var(--code-bg);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;
+    padding:12px 16px;margin:16px 0;color:var(--text)}
+  .note b{color:var(--text)}
+
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.96rem}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+  th{color:var(--muted);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.04em}
+
+  details{border:1px solid var(--border);border-radius:12px;padding:2px 16px;margin:14px 0;background:var(--card)}
+  summary{cursor:pointer;font-weight:600;padding:12px 0}
+  footer{padding:40px 0 60px;color:var(--muted);text-align:center;font-size:.94rem}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">For Solutions Consultants</span>
+    <h1>Set up a mobile POC in minutes</h1>
+    <p class="lede">One command builds all the Contentsquare projects your mobile POC/POT needs — and switches on everything you need to demo the SDK. No more clicking through Console.</p>
+    <a class="cta" href="https://github.com/Contentsquare-Presales/csq-poc-setup-dist/releases/latest/download/csq-poc-setup">
+      ⬇&nbsp; Download the tool <small>· macOS (Apple Silicon)</small>
+    </a>
+    <span class="sub">Latest version, always. See <a href="https://github.com/Contentsquare-Presales/csq-poc-setup-dist/releases">all releases</a>.</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <h2>What it does for you</h2>
+    <p class="step-lead">Setting up a mobile POC by hand means creating the Console projects yourself and remembering to flip on a long list of settings. Miss one and that feature just won't show up in your demo. This tool does all of it for you:</p>
+    <ul class="clean">
+      <li>Creates the right projects — iOS, Android, and/or webview — based on what's in the Disco.</li>
+      <li>Turns on <b>everything you need to show off the SDK</b>: Session Replay, Heatmaps, Crash Reporting, API &amp; webview error tracking, and more.</li>
+      <li>Sets capture and Session Replay recording to 100%, so data appears in your demo right away.</li>
+      <li>Hands you the project links and copy-paste setup instructions to give straight to the client's dev team.</li>
+    </ul>
+    <p>No guessing, nothing forgotten. Setup goes from an afternoon to a couple of minutes.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">1</span>Download &amp; open it</h2>
+    <p class="step-lead">It's a single file — nothing to install. Download it above, then open <b>Terminal</b> and paste these three lines (they let your Mac run it and make it available everywhere):</p>
+    <pre><code>chmod +x csq-poc-setup
+xattr -d com.apple.quarantine csq-poc-setup
+sudo mv csq-poc-setup /usr/local/bin/</code></pre>
+    <div class="note"><b>First-time note:</b> your Mac may say it "can't verify" the file — that's expected for a new download. The middle line takes care of it. (Or right-click the file → <b>Open</b> → <b>Open</b>.) It also quietly updates itself: if a newer version is out, it'll tell you on startup.</div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>Get your login token <span style="font-weight:400;color:var(--muted);font-size:1rem">(one time)</span></h2>
+    <p class="step-lead">The tool logs in to Console as you, so the first time you run it you paste in a token. After that it remembers you and refreshes itself — you won't need to do this again for about a week.</p>
+
+    <div class="placeholder">
+      <div class="big">📹</div>
+      <b>[ VIDEO PLACEHOLDER ]</b><br>
+      Short "how to grab your token" walkthrough goes here.
+    </div>
+
+    <p><b>Quick version:</b></p>
+    <ul class="clean">
+      <li>Log in to <b>Console</b> in <b>Chrome</b> like you normally would.</li>
+      <li>Open Chrome's developer tools (<code>⌥ Option + ⌘ Command + I</code>) and click the <b>Network</b> tab.</li>
+      <li>Type <code>webapi</code> in the filter box, then click around Console so something shows up in the list.</li>
+      <li>Click any item, find the line starting with <code>Authorization: Bearer</code>, and copy the long code after the word <code>Bearer</code> (it starts with <code>eyJ</code>).</li>
+    </ul>
+    <div class="note"><b>You only do this occasionally.</b> The tool keeps your login fresh in the background. You may get a one-time macOS <b>Keychain</b> pop-up — just click <b>Always Allow</b>.</div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>Run it</h2>
+    <p class="step-lead">In Terminal, run this with your deal name and the token from step 2:</p>
+    <pre><code>csq-poc-setup --deal "Boulevard" --token "paste-your-token-here"</code></pre>
+    <p>After the first run you can drop <code>--token</code> — it remembers you:</p>
+    <pre><code>csq-poc-setup --deal "Boulevard"</code></pre>
+    <p>Not sure of the exact deal name? Just run <code>csq-poc-setup</code> on its own to browse every deal in the Disco.</p>
+
+    <h3 style="margin-top:26px">Answer a few quick questions</h3>
+    <p class="step-lead">The tool walks you through a short setup. Everything is pre-filled from the Disco — press <b>Enter</b> to accept, or type something else to change it:</p>
+    <ul class="clean">
+      <li><b>Which account</b> to build in (it remembers your last one).</li>
+      <li><b>Project names</b> — sensible defaults like <code>Client POC [iOS]</code>.</li>
+      <li><b>One App or CSQ XP</b> — for CSQ XP it helps you pick or create a master project and choose an environment.</li>
+      <li><b>Where to store the data</b> — pick a region.</li>
+    </ul>
+    <p>Then it shows a summary and asks <b>"Create these projects?"</b> — nothing happens until you say yes.</p>
+    <div class="note"><b>Just want to see what it would do?</b> Add <code>--dry-run</code> to preview the whole plan without creating anything. Perfect for a first look or a screen-share.</div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>Hand it to the client</h2>
+    <p class="step-lead">When it's done, it prints everything you need to pass along:</p>
+    <ul class="clean">
+      <li><b>Links</b> to each project in Console.</li>
+      <li><b>The right setup docs</b> for the client's framework (iOS, Android, React Native, Flutter…).</li>
+      <li><b>Copy-paste instructions</b> for the client's developers, e.g. <em>"Implement Contentsquare with datasourceid …"</em>.</li>
+    </ul>
+    <p>Drop those into your handoff email or ticket. That's it.</p>
+  </section>
+
+  <section>
+    <h2>If something goes wrong</h2>
+    <table>
+      <thead><tr><th>What you see</th><th>What to do</th></tr></thead>
+      <tbody>
+        <tr><td>Your Mac won't open the file ("can't be verified")</td><td>Run the middle line from step 1 again, or right-click → <b>Open</b>. Normal for a new download.</td></tr>
+        <tr><td>It says you need to update</td><td>Download the latest version from the button at the top.</td></tr>
+        <tr><td>It says your login expired, or a permissions error</td><td>Grab a fresh token (step 2) and paste it once with <code>--token</code>.</td></tr>
+        <tr><td>A macOS <b>Keychain</b> pop-up appears</td><td>That's the tool keeping your login fresh — click <b>Always Allow</b>.</td></tr>
+        <tr><td>Not sure what it's about to do</td><td>Add <code>--dry-run</code> to preview without creating anything.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  Questions or feedback? <b>[ Add your Slack channel / who to ping here ]</b><br>
+  If something didn't work or you'd like it to do more, let us know.
+</footer>
+
+</body>
+</html>
