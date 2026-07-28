@@ -167,7 +167,7 @@ sudo mv csq-poc-setup /usr/local/bin/</code></pre>
       <thead><tr><th>What you see</th><th>What to do</th></tr></thead>
       <tbody>
         <tr><td>Your Mac won't open the file ("can't be verified")</td><td>Run the middle line from step 1 again, or right-click → <b>Open</b>. Normal for a new download.</td></tr>
-        <tr><td>It says you need to update</td><td>Download the latest version from the button at the top.</td></tr>
+        <tr><td>It says you need to update</td><td>Run <code>csq-poc-setup --update</code> — it downloads and installs the latest version for you. (Or download it again from the button at the top.)</td></tr>
         <tr><td>It says your login expired, or a permissions error</td><td>Grab a fresh token (step 2) and paste it once with <code>--token</code>.</td></tr>
         <tr><td>A macOS <b>Keychain</b> pop-up appears</td><td>That's the tool keeping your login fresh — click <b>Always Allow</b>.</td></tr>
         <tr><td>Not sure what it's about to do</td><td>Add <code>--dry-run</code> to preview without creating anything.</td></tr>
