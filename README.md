@@ -17,9 +17,10 @@ tracking, and more). Setup goes from an afternoon to a couple of minutes.
 
 ```bash
 chmod +x csq-poc-setup
-xattr -d com.apple.quarantine csq-poc-setup
 sudo mv csq-poc-setup /usr/local/bin/
 ```
+
+If macOS says it "can't verify" the file, right-click it → **Open** → **Open** (it's an unsigned download).
 
 See [all releases](https://github.com/Contentsquare-Presales/csq-poc-setup-dist/releases).
 

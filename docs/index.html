@@ -60,6 +60,10 @@
   .placeholder{border:2px dashed var(--border);border-radius:14px;background:var(--bg-soft);
     padding:34px 20px;text-align:center;color:var(--muted);margin:18px 0}
   .placeholder .big{font-size:1.6rem;margin-bottom:6px}
+  .videowrap{margin:18px 0}
+  .videowrap video{width:100%;max-width:900px;display:block;margin:0 auto;
+    border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);background:#000}
+  .videowrap figcaption{text-align:center;color:var(--muted);font-size:.9rem;margin-top:8px}
   .note{background:var(--code-bg);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;
     padding:12px 16px;margin:16px 0;color:var(--text)}
   .note b{color:var(--text)}
@@ -103,22 +107,23 @@
 
   <section>
     <h2><span class="num">1</span>Download &amp; open it</h2>
-    <p class="step-lead">It's a single file — nothing to install. Download it above, then open <b>Terminal</b> and paste these three lines (they let your Mac run it and make it available everywhere):</p>
+    <p class="step-lead">It's a single file — nothing to install. Download it above, then open <b>Terminal</b> and paste these two lines (they make it runnable and available everywhere):</p>
     <pre><code>chmod +x csq-poc-setup
-xattr -d com.apple.quarantine csq-poc-setup
 sudo mv csq-poc-setup /usr/local/bin/</code></pre>
-    <div class="note"><b>First-time note:</b> your Mac may say it "can't verify" the file — that's expected for a new download. The middle line takes care of it. (Or right-click the file → <b>Open</b> → <b>Open</b>.) It also quietly updates itself: if a newer version is out, it'll tell you on startup.</div>
+    <div class="note"><b>First-time note:</b> your Mac may say it "can't verify" the file — that's expected for a new download. Just right-click the file → <b>Open</b> → <b>Open</b> and it'll run from then on. It also quietly updates itself: if a newer version is out, it'll tell you on startup.</div>
   </section>
 
   <section>
     <h2><span class="num">2</span>Get your login token <span style="font-weight:400;color:var(--muted);font-size:1rem">(one time)</span></h2>
     <p class="step-lead">The tool logs in to Console as you, so the first time you run it you paste in a token. After that it remembers you and refreshes itself — you won't need to do this again for about a week.</p>
 
-    <div class="placeholder">
-      <div class="big">📹</div>
-      <b>[ VIDEO PLACEHOLDER ]</b><br>
-      Short "how to grab your token" walkthrough goes here.
-    </div>
+    <figure class="videowrap">
+      <video controls preload="metadata" playsinline>
+        <source src="token-walkthrough.mp4" type="video/mp4">
+        Your browser can't play this video — <a href="token-walkthrough.mp4">download it here</a>.
+      </video>
+      <figcaption>Grabbing your Console token, start to finish (~30s).</figcaption>
+    </figure>
 
     <p><b>Quick version:</b></p>
     <ul class="clean">
@@ -133,9 +138,9 @@ sudo mv csq-poc-setup /usr/local/bin/</code></pre>
   <section>
     <h2><span class="num">3</span>Run it</h2>
     <p class="step-lead">In Terminal, run this with your deal name and the token from step 2:</p>
-    <pre><code>csq-poc-setup --deal "Boulevard" --token "paste-your-token-here"</code></pre>
+    <pre><code>csq-poc-setup --deal "Acme Corp" --token "paste-your-token-here"</code></pre>
     <p>After the first run you can drop <code>--token</code> — it remembers you:</p>
-    <pre><code>csq-poc-setup --deal "Boulevard"</code></pre>
+    <pre><code>csq-poc-setup --deal "Acme Corp"</code></pre>
     <p>Not sure of the exact deal name? Just run <code>csq-poc-setup</code> on its own to browse every deal in the Disco.</p>
 
     <h3 style="margin-top:26px">Answer a few quick questions</h3>
@@ -166,7 +171,7 @@ sudo mv csq-poc-setup /usr/local/bin/</code></pre>
     <table>
       <thead><tr><th>What you see</th><th>What to do</th></tr></thead>
       <tbody>
-        <tr><td>Your Mac won't open the file ("can't be verified")</td><td>Run the middle line from step 1 again, or right-click → <b>Open</b>. Normal for a new download.</td></tr>
+        <tr><td>Your Mac won't open the file ("can't be verified")</td><td>Right-click the file → <b>Open</b> → <b>Open</b>. Normal for a new (unsigned) download.</td></tr>
         <tr><td>It says you need to update</td><td>Run <code>csq-poc-setup --update</code> — it downloads and installs the latest version for you. (Or download it again from the button at the top.)</td></tr>
         <tr><td>It says your login expired, or a permissions error</td><td>Grab a fresh token (step 2) and paste it once with <code>--token</code>.</td></tr>
         <tr><td>A macOS <b>Keychain</b> pop-up appears</td><td>That's the tool keeping your login fresh — click <b>Always Allow</b>.</td></tr>
