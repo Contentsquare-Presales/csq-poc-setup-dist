@@ -107,10 +107,11 @@
 
   <section>
     <h2><span class="num">1</span>Download &amp; open it</h2>
-    <p class="step-lead">It's a single file — nothing to install. Download it above, then open <b>Terminal</b> and paste these two lines (they make it runnable and available everywhere):</p>
-    <pre><code>chmod +x csq-poc-setup
+    <p class="step-lead">It's a single file — nothing to install. Download it above, then open <b>Terminal</b>, go to the download folder, and paste these three lines (the first tells macOS to trust it; the others make it runnable and available everywhere):</p>
+    <pre><code>xattr -c csq-poc-setup
+chmod +x csq-poc-setup
 sudo mv csq-poc-setup /usr/local/bin/</code></pre>
-    <div class="note"><b>First-time note:</b> your Mac may say it "can't verify" the file — that's expected for a new download. Just right-click the file → <b>Open</b> → <b>Open</b> and it'll run from then on. It also quietly updates itself: if a newer version is out, it'll tell you on startup.</div>
+    <div class="note"><b>"Apple could not verify…"?</b> That's macOS blocking an unsigned download — click <b>Done</b> (<em>not</em> "Move to Bin"). The <code>xattr -c</code> line above is the fix: it clears the download quarantine so the tool runs. (GUI alternative: <b>System Settings → Privacy &amp; Security → Open Anyway</b>.) The tool also quietly updates itself: if a newer version is out, it'll tell you on startup.</div>
   </section>
 
   <section>
@@ -171,7 +172,7 @@ sudo mv csq-poc-setup /usr/local/bin/</code></pre>
     <table>
       <thead><tr><th>What you see</th><th>What to do</th></tr></thead>
       <tbody>
-        <tr><td>Your Mac won't open the file ("can't be verified")</td><td>Right-click the file → <b>Open</b> → <b>Open</b>. Normal for a new (unsigned) download.</td></tr>
+        <tr><td>"Apple could not verify… malware" / won't open</td><td>Clear the download quarantine: <code>xattr -c csq-poc-setup</code> (or <code>sudo xattr -c /usr/local/bin/csq-poc-setup</code> if already installed), then run it. Or <b>System Settings → Privacy &amp; Security → Open Anyway</b>.</td></tr>
         <tr><td>It says you need to update</td><td>Run <code>csq-poc-setup --update</code> — it downloads and installs the latest version for you. (Or download it again from the button at the top.)</td></tr>
         <tr><td>It says your login expired, or a permissions error</td><td>Grab a fresh token (step 2) and paste it once with <code>--token</code>.</td></tr>
         <tr><td>A macOS <b>Keychain</b> pop-up appears</td><td>That's the tool keeping your login fresh — click <b>Always Allow</b>.</td></tr>
