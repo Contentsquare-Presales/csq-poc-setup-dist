@@ -7,25 +7,25 @@ tracking, and more). Setup goes from an afternoon to a couple of minutes.
 
 ## 📖 Full guide
 
-👉 **[Read the how-to guide](https://contentsquare-presales.github.io/csq-poc-setup-dist/)**
+👉 **[Read the how-to guide](https://contentsquare-presales.github.io/csq-xp-setup-dist/)**
 — what it does, how to get your login token, and how to run it.
 
 ## ⬇️ Download
 
-**[Download the latest version](https://github.com/Contentsquare-Presales/csq-poc-setup-dist/releases/latest/download/csq-poc-setup)**
+**[Download the latest version](https://github.com/Contentsquare-Presales/csq-xp-setup-dist/releases/latest/download/csq-xp-setup)**
 — a single file for macOS (Apple Silicon). Then:
 
 ```bash
-xattr -c csq-poc-setup
-chmod +x csq-poc-setup
-sudo mv csq-poc-setup /usr/local/bin/
+xattr -c csq-xp-setup
+chmod +x csq-xp-setup
+sudo mv csq-xp-setup /usr/local/bin/
 ```
 
 If macOS says **"Apple could not verify…"**, the `xattr -c` line clears the
-download quarantine so it runs (already installed? `sudo xattr -c /usr/local/bin/csq-poc-setup`).
+download quarantine so it runs (already installed? `sudo xattr -c /usr/local/bin/csq-xp-setup`).
 GUI alternative: **System Settings → Privacy & Security → Open Anyway**.
 
-See [all releases](https://github.com/Contentsquare-Presales/csq-poc-setup-dist/releases).
+See [all releases](https://github.com/Contentsquare-Presales/csq-xp-setup-dist/releases).
 
 ---
 

@@ -84,10 +84,10 @@
     <span class="eyebrow">For Solutions Consultants</span>
     <h1>Set up a mobile POC in minutes</h1>
     <p class="lede">One command builds all the Contentsquare projects your mobile POC/POT needs — and switches on everything you need to demo the SDK. No more clicking through Console.</p>
-    <a class="cta" href="https://github.com/Contentsquare-Presales/csq-poc-setup-dist/releases/latest/download/csq-poc-setup">
+    <a class="cta" href="https://github.com/Contentsquare-Presales/csq-xp-setup-dist/releases/latest/download/csq-xp-setup">
       ⬇&nbsp; Download the tool <small>· macOS (Apple Silicon)</small>
     </a>
-    <span class="sub">Latest version, always. See <a href="https://github.com/Contentsquare-Presales/csq-poc-setup-dist/releases">all releases</a>.</span>
+    <span class="sub">Latest version, always. See <a href="https://github.com/Contentsquare-Presales/csq-xp-setup-dist/releases">all releases</a>.</span>
   </div>
 </header>
 
@@ -108,9 +108,9 @@
   <section>
     <h2><span class="num">1</span>Download &amp; open it</h2>
     <p class="step-lead">It's a single file — nothing to install. Download it above, then open <b>Terminal</b>, go to the download folder, and paste these three lines (the first tells macOS to trust it; the others make it runnable and available everywhere):</p>
-    <pre><code>xattr -c csq-poc-setup
-chmod +x csq-poc-setup
-sudo mv csq-poc-setup /usr/local/bin/</code></pre>
+    <pre><code>xattr -c csq-xp-setup
+chmod +x csq-xp-setup
+sudo mv csq-xp-setup /usr/local/bin/</code></pre>
     <div class="note"><b>"Apple could not verify…"?</b> That's macOS blocking an unsigned download — click <b>Done</b> (<em>not</em> "Move to Bin"). The <code>xattr -c</code> line above is the fix: it clears the download quarantine so the tool runs. (GUI alternative: <b>System Settings → Privacy &amp; Security → Open Anyway</b>.) The tool also quietly updates itself: if a newer version is out, it'll tell you on startup.</div>
   </section>
 
@@ -139,10 +139,10 @@ sudo mv csq-poc-setup /usr/local/bin/</code></pre>
   <section>
     <h2><span class="num">3</span>Run it</h2>
     <p class="step-lead">In Terminal, run this with your deal name and the token from step 2:</p>
-    <pre><code>csq-poc-setup --deal "Acme Corp" --token "paste-your-token-here"</code></pre>
+    <pre><code>csq-xp-setup --deal "Acme Corp" --token "paste-your-token-here"</code></pre>
     <p>After the first run you can drop <code>--token</code> — it remembers you:</p>
-    <pre><code>csq-poc-setup --deal "Acme Corp"</code></pre>
-    <p>Not sure of the exact deal name? Just run <code>csq-poc-setup</code> on its own to browse every deal in the Disco.</p>
+    <pre><code>csq-xp-setup --deal "Acme Corp"</code></pre>
+    <p>Not sure of the exact deal name? Just run <code>csq-xp-setup</code> on its own to browse every deal in the Disco.</p>
 
     <h3 style="margin-top:26px">Answer a few quick questions</h3>
     <p class="step-lead">The tool walks you through a short setup. Everything is pre-filled from the Disco — press <b>Enter</b> to accept, or type something else to change it:</p>
@@ -172,8 +172,8 @@ sudo mv csq-poc-setup /usr/local/bin/</code></pre>
     <table>
       <thead><tr><th>What you see</th><th>What to do</th></tr></thead>
       <tbody>
-        <tr><td>"Apple could not verify… malware" / won't open</td><td>Clear the download quarantine: <code>xattr -c csq-poc-setup</code> (or <code>sudo xattr -c /usr/local/bin/csq-poc-setup</code> if already installed), then run it. Or <b>System Settings → Privacy &amp; Security → Open Anyway</b>.</td></tr>
-        <tr><td>It says you need to update</td><td>Run <code>csq-poc-setup --update</code> — it downloads and installs the latest version for you. (Or download it again from the button at the top.)</td></tr>
+        <tr><td>"Apple could not verify… malware" / won't open</td><td>Clear the download quarantine: <code>xattr -c csq-xp-setup</code> (or <code>sudo xattr -c /usr/local/bin/csq-xp-setup</code> if already installed), then run it. Or <b>System Settings → Privacy &amp; Security → Open Anyway</b>.</td></tr>
+        <tr><td>It says you need to update</td><td>Run <code>csq-xp-setup --update</code> — it downloads and installs the latest version for you. (Or download it again from the button at the top.)</td></tr>
         <tr><td>It says your login expired, or a permissions error</td><td>Grab a fresh token (step 2) and paste it once with <code>--token</code>.</td></tr>
         <tr><td>A macOS <b>Keychain</b> pop-up appears</td><td>That's the tool keeping your login fresh — click <b>Always Allow</b>.</td></tr>
         <tr><td>Not sure what it's about to do</td><td>Add <code>--dry-run</code> to preview without creating anything.</td></tr>
